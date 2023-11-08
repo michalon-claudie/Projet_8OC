@@ -10,3 +10,9 @@ root.render(
         <App />
     </BrowserRouter>
 )
+
+export default function Home (){
+    <div>
+        <h1>Bienvenue sur la page d'acceuil</h1>
+    </div>
+}

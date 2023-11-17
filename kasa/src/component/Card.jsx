@@ -1,12 +1,13 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 export default function Card({imageUrl, id, title})
 {
-    const url = `/logements/${id}`
+    const url = `/apartment/${title}`
     return(
-    <a href={url} className='card'>
+    <Link to={url} className='card'>
         <img src={imageUrl} alt = {title}/>
         <h3>{title}</h3>
-    </a>
+    </Link>
     )
 }

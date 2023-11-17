@@ -7,7 +7,7 @@ export default function Cards({cards})
     <div className='cardsContainer'>
         {
             cards.map(e => (
-                <Card imageUrl={e.cover} title={e.title} id ={e.id}/> 
+                <Card key = {e.id} imageUrl={e.cover} title={e.title} id ={e.id}/> 
             ))
         }
     </div>

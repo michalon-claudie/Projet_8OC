@@ -12,7 +12,7 @@ export default function Apartment()
             {apartments.map((logement) => (
                 <div key={logement.id}>
                 <Slideshow pictures={logement.pictures} />
-            </div>
+        </div>
         ))}
             <Footer/>
         </div>

@@ -1,5 +1,6 @@
 import React from 'react'
 import Card from '../component/Card'
+import '../style/components/cards.scss'
 
 export default function Cards({cards})
 {

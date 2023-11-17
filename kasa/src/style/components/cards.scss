@@ -1,0 +1,35 @@
+.cardsContainer{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 3% 7%;
+    padding:4% 3%;
+    width:80%;
+    background-color: #F6F6F6;
+    border-radius: 10px;
+    a{
+        text-decoration: none;
+    }
+    .card{
+        position:relative;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        width:29%;
+        padding:19px;
+        border-radius: 5%;
+        img{
+            width:100%;
+            height:257px;
+            border-radius: 5%;
+            object-fit: cover;
+            background: linear-gradient(#FF6060, rgba(0,0,0,0.4));
+        }
+        h3{
+            position: absolute;
+            top:46%;
+            margin-block-start: 0px;
+            margin-inline-end: 0px;
+        }
+    }
+}

@@ -11,7 +11,6 @@ export default function Home()
         <div>
             <Header/>
             <Banner/>
-            <h1>Bienvenue sur la page d'acceuil</h1>
             <Cards cards={apartments}/>
             <Footer/>
         </div>

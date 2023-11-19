@@ -10,10 +10,8 @@ export default function Apartment()
         <div>
             <Header/>
             {apartments.map((logement) => (
-                <div key={logement.id}>
-                <Slideshow pictures={logement.pictures} />
-        </div>
-        ))}
+                <Slideshow key={logement.id} pictures={logement.pictures} />
+            ))}
             <Footer/>
         </div>
     )

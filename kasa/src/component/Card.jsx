@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 
-export default function Card({imageUrl, id, title})
+export default function Card({imageUrl, title})
 {
     const url = `/apartment/${title}`
     return(

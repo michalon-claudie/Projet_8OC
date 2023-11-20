@@ -1,28 +1,26 @@
 import React ,{ useState } from 'react'
 import arrowLeft from '../assets/arrowLeft.png'
 import arrowRight from '../assets/arrowRight.png'
+import  '../style/components/slideshow.scss'
 
-export default function Slideshow({ pictures }) {
+export default function Slideshow({ picturesList }) {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const currentImage = picturesList[0]
+
+  console.log('currentImage:', currentImage);
 
   const goToNextSlide = () => {
-    const nextIndex = (currentIndex + 1) % pictures.length;
-    setCurrentIndex(nextIndex);
+    setCurrentIndex((currentIndex + 1) % picturesList.length);
   };
 
   const goToPrevSlide = () => {
-    const prevIndex = (currentIndex - 1 + pictures.length) % pictures.length;
-    setCurrentIndex(prevIndex);
+    setCurrentIndex((currentIndex - 1 + picturesList.length) % picturesList.length);
   };
   return (
     <div className='Slideshow'>
-      <img src={arrowLeft} alt='Previous' onClick={goToPrevSlide} />
-          {pictures.map((imageUrl, index) => (
-            <div key={index}>
-              <img src={imageUrl} alt={`Image ${index + 1}`} />
-            </div>
-          ))}
-      <img src={arrowRight} alt='NextImage' onClick={goToNextSlide} />
+      <img src={arrowLeft} alt='Previous' onClick={goToPrevSlide} className='arrow'/>
+      <img src={currentImage} alt={`Image ${currentIndex + 1}`} />
+      <img src={arrowRight} alt='NextImage' onClick={goToNextSlide} className='arrow'/>
     </div>
   );
 }

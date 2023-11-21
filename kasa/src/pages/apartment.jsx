@@ -1,9 +1,10 @@
 import React from 'react'
+import { useParams } from 'react-router-dom'
+import '../style/pages/Apartment.scss'
 import Header from '../component/Header'
 import Footer from '../component/Footer'
 import apartments from '../logements.json'
 import Slideshow from '../component/Slideshow'
-import { useParams } from 'react-router-dom'
 import Collapse from '../component/Collapse'
 
 export default function Apartment()
@@ -15,6 +16,7 @@ export default function Apartment()
     console.log('currentApartment',currentApartment)
 
     const description = currentApartment ? currentApartment.description : "";
+    const equipments = currentApartment ? currentApartment.equipments:"";
 
     return (
         <div>
@@ -22,10 +24,16 @@ export default function Apartment()
             {currentApartment && currentApartment.pictures && (
                 <Slideshow picturesList={currentApartment.pictures} />
             )} 
+            <section className='theTwoCollapse'>
             <Collapse
                 title='Description'
                 content={description}
             />
+            <Collapse
+                title="equipments"
+                content={equipments}
+            />
+            </section>
             <Footer/>
         </div>
     )

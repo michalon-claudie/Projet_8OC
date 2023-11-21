@@ -6,7 +6,7 @@ const bannerImages = {
         image: require("../assets/Image source 1.png"),
         text: "Chez vous, partout et ailleurs",
     },
-    "/a-propos": {
+    "/about": {
         image: require("../assets/Image source 2.png"),
         text: "",
     },

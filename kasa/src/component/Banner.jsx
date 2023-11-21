@@ -1,13 +1,25 @@
 import React from 'react'
 import "../style/components/banner.scss"
-import imgBanner from '../assets/Image source 1.png'
 
-export default function Banner()
+const bannerImages = {
+    "/": {
+        image: require("../assets/Image source 1.png"),
+        text: "Chez vous, partout et ailleurs",
+    },
+    "/a-propos": {
+        image: require("../assets/Image source 2.png"),
+        text: "",
+    },
+}
+
+export default function Banner({location})
 {
+    const currentPath = location.pathname
+    const { image, text } = bannerImages[currentPath]
     return (
         <div className='Banner'>
-            <img src={imgBanner} alt='picture_banner'/>
-            <h1>Chez vous, partout et ailleurs</h1>
+            <img src={image} alt='picture_banner'/>
+            {currentPath === "/" && <h1>{text}</h1>}
         </div>
     )
 }

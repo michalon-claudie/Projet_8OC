@@ -7,10 +7,10 @@ import { useParams } from 'react-router-dom'
 
 export default function Apartment()
 {
-    const { id } = useParams();
-    const currentApartment = apartments.find(apartment => apartment.id === parseInt(id))
+    const { title } = useParams();
+    const currentApartment = apartments.find(apartment => apartment.title === parseInt(title))
 
-    console.log('id',id)
+    console.log('title',title)
     console.log('currentApartment',currentApartment)
 
     return (

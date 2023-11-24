@@ -19,6 +19,7 @@ export default function Apartment()
     const description = currentApartment ? currentApartment.description : "";
     const equipments = currentApartment ? currentApartment.equipments:"";
     const rating = currentApartment ? currentApartment.rating : 0;
+    const tags = currentApartment ? currentApartment.tags : "";
 
 
     return (
@@ -27,9 +28,10 @@ export default function Apartment()
             {currentApartment && currentApartment.pictures && (
             <Slideshow picturesList={currentApartment.pictures} />
             )} 
-            <section className="rating-section">
-            <h3>Rating:</h3>
-            {generateStars(rating)}
+            <section className="ratingAndTagsSection">
+              <h3>Rating:</h3>
+              {generateStars(rating)}
+              <tags>{tags}</tags>
             </section>
             <section className='theTwoCollapse'>
             <Collapse

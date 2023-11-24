@@ -21,7 +21,7 @@ export default function Slideshow({ picturesList }) {
   };
   return (
     <div className='Slideshow'>
-      <img src={arrowLeft} alt='Previous' onClick={goToPrevSlide} className='arrow'/>
+      <img src={arrowLeft} alt='Previous' onClick={goToPrevSlide} className='arrow arrow_left'/>
       <img src={currentImage} alt={`Image ${currentIndex + 1}`} className='picturesSlideshow'/>
       <img src={arrowRight} alt='NextImage' onClick={goToNextSlide} className='arrow arrow_right'/>
     </div>

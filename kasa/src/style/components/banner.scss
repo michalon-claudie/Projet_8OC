@@ -1,3 +1,19 @@
+@mixin tablet
+{
+    @media (min-width: 800px) and (max-width:1020px) 
+    {
+        @content;
+    }
+}
+
+@mixin smartphones
+{
+    @media (min-width: 320px) and (max-width:799px) 
+    {
+        @content;
+    }
+}
+
 .Banner{
     margin: 0 7%;
     position: relative;
@@ -8,13 +24,26 @@
         height:223px;
         border-radius: 35px;
         filter: brightness(0.8);
+        @include smartphones(){
+            height:140px;
+        }
     }
     h1{
         position:absolute;
         top:23%;
         color:white;
-        transform: translateX(40%);
+        right:15%;
+        left:15%;
         font-weight: 400;
         font-size: 48px;
+        @include tablet{
+            font-size:38px;
+        }
+        @include smartphones(){
+            font-size:24px;
+            top:16%;
+            right:13%;
+            left:9%;
+        }
     }
 }

@@ -1,3 +1,11 @@
+@mixin smartphones
+{
+    @media (min-width: 320px) and (max-width:799px) 
+    {
+        @content;
+    }
+}
+
 .Footer{
     background-color: black;
     display: flex;
@@ -8,6 +16,9 @@
     img{
         display: flex;
         width: 9%;
+        @include smartphones(){
+            width:33%;
+        }
     }
     p{
         color: white;

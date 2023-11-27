@@ -1,3 +1,20 @@
+$primaryColor: #FF6060;
+h1,p{
+    color:$primaryColor;
+}
+h1{
+    padding-top: 20px;
+}
+p{
+    padding-bottom: 20px;
+}
+.informationLocation{
+    margin: 0 79px;
+    .titleAndHostContainer{
+        display: flex;
+        justify-content: space-between;
+    }
+}
 .theTwoCollapse{
     display: flex;
     justify-content: space-between;

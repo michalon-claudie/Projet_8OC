@@ -31,17 +31,23 @@ export default function Apartment()
       {currentApartment && currentApartment.pictures && (
       <Slideshow picturesList={currentApartment.pictures} />
       )} 
-      <h1>{title}</h1>
-      <p>{location}</p>
-      <div className='hostContainer'>
-        <h3>{host.name}</h3>
-        <img src={host.picture} alt='Host Picture'/>
-      </div>
-      <section className="ratingAndTagsSection">
-        <h3>Rating:</h3>
-        {generateStars(rating)}
-        {tags.map((tag, index) => (
-        <span key={index} className="tag">{tag}</span>))}
+      <section className='informationLocation'>
+        <div className='titleAndHostContainer'>
+          <div className='TitleLocation'>
+            <h1>{title}</h1>
+            <p>{location}</p>
+          </div>
+          <div className='host'>
+            <h3>{host.name}</h3>
+            <img src={host.picture} alt='Host Picture'/>
+            </div>
+        </div>
+        <div className="ratingAndTagsSection">
+          <h3>Rating:</h3>
+          {generateStars(rating)}
+          {tags.map((tag, index) => (
+          <span key={index} className="tag">{tag}</span>))}
+        </div>
       </section>
       <section className='theTwoCollapse'>
       <Collapse

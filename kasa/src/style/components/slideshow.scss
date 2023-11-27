@@ -20,8 +20,15 @@
             top:44%;
         }
     }
-    .arrow_right, .arrow_left{
+    .arrow_right{
         right:8%;
+        @include smartphones(){
+            width:24px;
+            height:24px;
+        }
+    }
+    .arrow_left{
+        right:84%;
         @include smartphones(){
             width:24px;
             height:24px;

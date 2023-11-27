@@ -1,6 +1,16 @@
+@mixin smartphones
+{
+    @media (min-width: 320px) and (max-width:799px) 
+    {
+        @content;
+    }
+}
 .CollapseContainer{
     display: flex;
     flex-direction: column;
     gap: 30px;
-    margin: 44px 7%;
+    margin: 44px 14%;
+    @include smartphones {
+        margin: 30px 7%;
+    }
 }

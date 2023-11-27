@@ -32,21 +32,24 @@ export default function Apartment()
       <Slideshow picturesList={currentApartment.pictures} />
       )} 
       <section className='informationLocation'>
-        <div className='titleAndHostContainer'>
+        <div className='titleAndTagsContainer'>
           <div className='TitleLocation'>
             <h1>{title}</h1>
             <p>{location}</p>
           </div>
+          <div className='tags'>
+            {tags.map((tag, index) => (
+            <span key={index} className="tag">{tag}</span>))}
+          </div>
+        </div>
+        <div className="ratingAndHostSection">
           <div className='host'>
             <h3>{host.name}</h3>
             <img src={host.picture} alt='Host Picture'/>
-            </div>
-        </div>
-        <div className="ratingAndTagsSection">
-          <h3>Rating:</h3>
-          {generateStars(rating)}
-          {tags.map((tag, index) => (
-          <span key={index} className="tag">{tag}</span>))}
+          </div>
+          <div className='ratingStars'>
+            {generateStars(rating)}
+          </div>
         </div>
       </section>
       <section className='theTwoCollapse'>
@@ -55,8 +58,16 @@ export default function Apartment()
           content={description}
       />
       <Collapse
-          title="equipments"
-          content={equipments}
+          title="Equipments"
+          content={
+            <ul>
+              {equipments.map((equipment, index) => (
+                <li key={index}>
+                    {equipment}
+                </li>
+              ))}
+            </ul>
+          }
       />
       </section>
       <Footer/>

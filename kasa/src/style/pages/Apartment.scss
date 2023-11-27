@@ -1,4 +1,13 @@
 $primaryColor: #FF6060;
+
+@mixin smartphones
+{
+    @media (min-width: 320px) and (max-width:799px) 
+    {
+        @content;
+    }
+}
+
 h1,p{
     color:$primaryColor;
 }
@@ -10,14 +19,103 @@ p{
 }
 .informationLocation{
     margin: 0 79px;
-    .titleAndHostContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include smartphones(){
+        align-items: baseline;
+        flex-direction: column;
+        gap:10px;
+    }
+    .titleAndTagsContainer{
         display: flex;
-        justify-content: space-between;
+        flex-direction: column;
+        .TitleLocation h1{
+            font-size: 36px;
+            margin-block-start: 0px;
+            margin-block-end: 0px;
+        }
+        .TitleLocation p{
+            font-size:18px;
+            margin-block-start: 0px;
+            padding-bottom: 0px;
+        }
+        .tags{
+            display: flex;
+            gap:10px;
+            .tag{
+                background-color: $primaryColor;
+                color:white;
+                border-radius: 20px;
+                padding: 3px 27px;
+                font-size:14px;
+            }
+        }
+    }
+    .ratingAndHostSection{
+        display: flex;
+        flex-direction: column;
+        @include smartphones(){
+            flex-direction: row-reverse;
+            justify-content: space-between;
+            width: 100%;
+            align-items: center;
+        }
+        .host{
+            display: flex;
+            gap:5px;
+            align-items: center;
+            h3{
+            font-size: 18px;
+            margin-block-start: 0px;
+            margin-block-end: 0px;
+            font-weight: 500;
+        }
+            img{
+            height: 64px;
+            width: 64px;
+            border-radius: 30px;
+        }
+    }
     }
 }
 .theTwoCollapse{
     display: flex;
     justify-content: space-between;
-    padding: 45px 0 50px 0;
-    margin: 0 auto ;
+    padding: 38px 0 50px 0;
+    margin: 0 79px;
+    @include smartphones(){
+        flex-direction: column;
+        gap:30px;
+    }
+    .Collapse{
+        display: flex;
+        flex-direction: column;
+        width: 47%;
+        @include smartphones(){
+            width:100%;
+        }
+        .CollapseHeader{
+            width:100%;
+            padding:0;
+            h3{
+                font-size:18px;
+                margin-block-start: 0px;
+                margin-block-end: 0px;
+                padding-top: 12px;
+                padding-bottom: 12px;
+                padding-left: 10px;
+            }
+        }
+        .CollapseContent{
+            ul{
+                list-style-type: none;
+                margin-block-start: 0px;
+                margin-block-end: 0px;
+                margin-inline-start: 0px;
+                margin-inline-end: 0px;
+                padding-inline-start: 0px;
+            }
+        }
+    }
 }

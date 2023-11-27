@@ -13,7 +13,7 @@ export default function Collapse({title, content}){
         <div className='Collapse'>
             <div className='CollapseHeader' onClick={toggleCollapse}>
                 <h3>{title}</h3>
-                <img src={isOpen ? arrow_up:arrow_down} alt={isOpen? arrow_up:arrow_down}/>
+                <img src={isOpen ? arrow_down:arrow_up} alt={isOpen? arrow_down:arrow_up} className='arrow'/>
             </div>
             {isOpen&& (
                 <div className='CollapseContent'>

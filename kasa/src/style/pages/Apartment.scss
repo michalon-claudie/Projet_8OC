@@ -26,6 +26,7 @@ p{
         align-items: baseline;
         flex-direction: column;
         gap:10px;
+        margin: 0 28px;
     }
     .titleAndTagsContainer{
         display: flex;
@@ -87,6 +88,7 @@ p{
     @include smartphones(){
         flex-direction: column;
         gap:30px;
+        margin: 0 28px;
     }
     .Collapse{
         display: flex;

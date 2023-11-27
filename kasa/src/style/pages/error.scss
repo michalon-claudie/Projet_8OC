@@ -1,10 +1,21 @@
 @import '../index.scss';
 
+@mixin smartphones
+{
+    @media (min-width: 320px) and (max-width:799px) 
+    {
+        @content;
+    }
+}
+
 .errorBody{
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 0px 0px 10% 0px;
+    @include smartphones(){
+        padding:10%;
+    }
     h1{
         font-family: Montserrat;
         font-size: 288px;
@@ -14,17 +25,27 @@
         color: $primaryColor;
         margin-block-start: 0px;
         margin-block-end: 0px;
+        @include smartphones(){
+            font-size:96px;
+        }
     }
     p{
-        font-family: Montserrat;
         font-size: 36px;
         font-weight: 500;
         line-height: 51px;
         letter-spacing: 0em;
         text-align: left;
         color: $primaryColor;
+        @include smartphones(){
+            font-size:18px;
+            text-align: center;
+        }
     }
     a{
         color: $primaryColor;
+        @include smartphones(){
+            font-size:14px;
+            text-align: center;
+        }
     }
 }

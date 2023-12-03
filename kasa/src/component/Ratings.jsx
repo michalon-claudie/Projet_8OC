@@ -10,7 +10,6 @@ export default function generateStars(rating){
         key={index}
         src={index < ratingNumber ? pink_star : grey_star}
         alt={index < ratingNumber ? 'star' : 'empty-star'}
-        style={{ width: '20px', height: '20px', margin: '0 2px' }}
       />
     ));
   };

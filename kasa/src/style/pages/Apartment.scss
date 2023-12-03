@@ -35,21 +35,33 @@ p{
             font-size: 36px;
             margin-block-start: 0px;
             margin-block-end: 0px;
+            @include smartphones(){
+                font-size:18px;
+            }
         }
         .TitleLocation p{
             font-size:18px;
             margin-block-start: 0px;
             padding-bottom: 0px;
+            @include smartphones(){
+                font-size:14px;
+            }
         }
         .tags{
             display: flex;
             gap:10px;
+            @include smartphones(){
+                align-items: center;
+            }
             .tag{
                 background-color: $primaryColor;
                 color:white;
                 border-radius: 20px;
                 padding: 3px 27px;
                 font-size:14px;
+                @include smartphones(){
+                    font-size:10px;
+                }
             }
         }
     }
@@ -71,13 +83,31 @@ p{
             margin-block-start: 0px;
             margin-block-end: 0px;
             font-weight: 500;
+            @include smartphones(){
+                font-size:12px;
+            }
         }
             img{
             height: 64px;
             width: 64px;
             border-radius: 30px;
+            @include smartphones(){
+                height:32px;
+                width:32px;
+            }
         }
     }
+        .ratingStars{
+            img{
+                width:20px;
+                 height: 20px; 
+                 margin: 0 2px;
+                @include smartphones(){
+                    width: 18px;
+                    height:18px;
+                }
+            }
+        }
     }
 }
 .theTwoCollapse{

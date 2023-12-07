@@ -16,6 +16,7 @@
         position:absolute;
         z-index:1;
         top:24%;
+        cursor: pointer;
         @include smartphones(){
             top:44%;
         }

@@ -1,4 +1,4 @@
-import React ,{ useState } from 'react'
+import React ,{ useState , useEffect} from 'react'
 import arrowLeft from '../assets/arrowLeft.png'
 import arrowRight from '../assets/arrowRight.png'
 import  '../style/components/slideshow.scss'
@@ -11,14 +11,17 @@ export default function Slideshow({ picturesList }) {
   console.log('currentImage:', currentImage);
 
   const goToNextSlide = () => {
-    setCurrentIndex((currentIndex + 1) % picturesList.length);
-    setCurrentImage(picturesList[currentIndex])
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % picturesList.length);
   };
 
   const goToPrevSlide = () => {
-    setCurrentIndex((currentIndex - 1 + picturesList.length) % picturesList.length);
-    setCurrentImage(picturesList[currentIndex])
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + picturesList.length) % picturesList.length);
   };
+
+  useEffect(() => {
+    setCurrentImage(picturesList[currentIndex]);
+  }, [currentIndex, picturesList]);
+
   return (
     <div className='Slideshow'>
       <img src={arrowLeft} alt='Previous' onClick={goToPrevSlide} className='arrow arrow_left'/>

@@ -1,5 +1,6 @@
 import React from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
+import React, { useEffect } from 'react'
 import '../style/pages/Apartment.scss'
 import Header from '../component/Header'
 import Footer from '../component/Footer'
@@ -12,9 +13,16 @@ export default function Apartment()
 {
     const { id } = useParams();
     const currentApartment = apartments.find(apartment => apartment.id === id)
+    const navigate = useNavigate()
 
     console.log('id',id)
     console.log('currentApartment',currentApartment)
+
+    useEffect(() => {
+      if (!currentApartment) {
+          navigate("*")
+      }
+  }, [currentApartment, navigate])
 
     const description = currentApartment ? currentApartment.description : "";
     const equipments = currentApartment ? currentApartment.equipments:"";

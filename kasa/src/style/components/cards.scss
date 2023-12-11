@@ -5,22 +5,32 @@
         @content;
     }
 }
+@mixin tablet {
+    @media (min-width: 800px) and (max-width: 1040px) {
+        @content;
+    }
+}
 
 .cardsContainer{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    margin: 3% 7%;
-    padding:4% 3%;
-    width:80%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 60px;
+    grid-row-gap: 50px;
+    padding: 56px 50px 43px 50px;
+    width: 86%;
+    max-width: 1240px;
+    margin: 0 auto 50px auto;
     background-color: #F6F6F6;
     border-radius: 10px;
-    gap:44px;
     @include smartphones(){
+        grid-template-columns: 1fr;
         background-color: white;
         padding:0px;
         width:86%;
         margin: 6% 7%;
+    }
+    @include tablet(){
+        gap:34px;
     }
     a{
         text-decoration: none;
@@ -30,7 +40,6 @@
         display: flex;
         flex-direction: column;
         height: 100%;
-        width:30%;
         border-radius: 5%;
         @include smartphones(){
             width:100%;
@@ -61,6 +70,10 @@
             font-weight:500;
             padding:10px;
             margin-block-end: 0px;
+            @include tablet(){
+                top:71%;
+                font-size: 16px;
+            }
         }
     }
 }

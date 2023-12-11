@@ -12,7 +12,7 @@ export default function Header()
             <ul className='nav_header'>
                 <li>
                     <Link to={'/'} className={`link ${location.pathname === "/" ? "active" : ""}`}>
-                        Acceuil 
+                        Accueil 
                     </Link>
                 </li>
                 <li>

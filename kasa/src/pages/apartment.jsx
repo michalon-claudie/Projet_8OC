@@ -1,6 +1,5 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
-import React, { useEffect } from 'react'
 import '../style/pages/Apartment.scss'
 import Header from '../component/Header'
 import Footer from '../component/Footer'
@@ -23,6 +22,8 @@ export default function Apartment()
           navigate("*")
       }
   }, [currentApartment, navigate])
+
+    if (currentApartment){
 
     const description = currentApartment ? currentApartment.description : "";
     const equipments = currentApartment ? currentApartment.equipments:"";
@@ -81,4 +82,5 @@ export default function Apartment()
       <Footer/>
     </div>
   )
+  }
 }

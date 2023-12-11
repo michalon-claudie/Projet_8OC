@@ -1,58 +1,61 @@
 $primaryColor: #FF6060;
 
-@mixin smartphones
-{
-    @media (min-width: 320px) and (max-width:799px) 
-    {
+@mixin smartphones {
+    @media (min-width: 320px) and (max-width: 799px) {
         @content;
     }
 }
 
-@mixin tablet
-{
-    @media (min-width: 800px) and (max-width:1040px) 
-    {
+@mixin tablet {
+    @media (min-width: 800px) and (max-width: 1040px) {
         @content;
     }
 }
 
-.header{
-    display:flex;
+.header {
+    display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 45px 0 50px 0;
     margin: 0 auto;
     width: 86%;
-    img{
-        @include smartphones(){
-            width:46%;
+
+    img {
+        @include smartphones {
+            width: 46%;
         }
     }
-    .nav_header{
+
+    .nav_header {
         color: $primaryColor;
-        display:flex;
+        display: flex;
         justify-content: space-between;
         list-style-type: none;
         padding-inline-start: 0px;
-        width:24%;
-        @include smartphones(){
-            width:45%;
+        width: 24%;
+
+        @include smartphones {
+            width: 45%;
             margin-block-start: 0px;
             margin-block-end: 0px;
-            }
-        @include tablet(){
-            width:32%;
         }
-        li{
+
+        @include tablet {
+            width: 32%;
+        }
+
+        li {
             font-size: 24px;
-            @include smartphones(){
-            font-size: 17px;
-            line-height: 17.11px;
+
+            @include smartphones {
+                font-size: 17px;
+                line-height: 17.11px;
             }
-            a{
+
+            a {
                 text-decoration: none;
-                color:$primaryColor;
-                &:focus{
+                color: $primaryColor;
+                &.active{
                     text-decoration: underline;
                 }
             }
